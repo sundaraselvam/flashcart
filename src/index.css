@@ -1,4 +1,4 @@
-. *{
+*{
   box-sizing: border-box;
 }
 
@@ -190,9 +190,15 @@ body{
 .card-title{
   font-size: 1.05rem;
   line-height: 1.25;
-  margin: 0 0 0.5rem 0;
+  margin: 0;
+  margin-bottom: 0.75rem;
   font-weight: 800;
   z-index: 2;
+  min-height: 2.6em; /* ensure consistent height for titles */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   /* gradient text for more visual interest */
   background: linear-gradient(90deg, #ffffff, #fff1a8, #ffd7a8);
   -webkit-background-clip: text;
@@ -202,20 +208,24 @@ body{
 
 .card-image{
   width: 100%;
-  height: 150px; /* fixed image area for uniform cards */
+  height: 180px; /* increased height for better visibility */
   object-fit: contain;
-  margin: 0.25rem 0;
+  margin: 0;
   background: rgba(255,255,255,0.08);
-  padding: 0.5rem;
+  padding: 0.75rem;
   border-radius: 8px;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-desc{
   font-size: 0.92rem;
+  line-height: 1.4;
   color: rgba(255,245,225,0.92); /* warm off-white */
-  margin: 0.5rem 0;
-  flex: 0 0 auto;
+  margin: 0.75rem 0;
+  flex: 1 1 auto;
   /* clamp description to 3 lines so cards remain visually the same height */
   display: -webkit-box;
   -webkit-line-clamp: 3;
